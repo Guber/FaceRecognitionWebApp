@@ -7,6 +7,8 @@ webapp/php/resources/.gitkeep
 javacore/img/.gitkeep
 javacore/resources/*.gitkeep
 
+ignore/*
+
 # Created by https://www.gitignore.io/api/java,intellij+iml
 
 ### Intellij+iml ###
@@ -82,7 +84,7 @@ modules.xml
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.ear
 *.zip
