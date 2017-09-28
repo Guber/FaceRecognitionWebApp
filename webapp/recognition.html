@@ -1,0 +1,114 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet"
+        type="text/css">
+  <link href="third_party/range-slider/dist/css/bootstrap-slider.css" rel="stylesheet">
+  <script src="third_party/range-slider/dist/bootstrap-slider.js"></script>
+</head>
+<body style="background-color: grey;">
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span>Face Recognition&nbsp;</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="#">Just recognition</a>
+        </li>
+        <li>
+          <a href="training.html">Training&amp;Recognition</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section" style="background-color: grey;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Camera Input using getUserMedia</h3>
+
+            <p style="float: right; cursor: pointer;" data-toggle="modal" data-target="#myModal">Click to see the
+              database description!</p>
+            <br>
+          </div>
+          <div class="panel-body">
+            <div style="text-align: center;">
+              <video id="video" width="800" height="600" autoplay
+                     style="margin-left: auto; margin-right: auto;"></video>
+              <canvas id="rect" width="800" height="600" style="margin-top: -600px;"></canvas>
+              <input ng-model="price" id="slider"
+                     style="width: 90%;">
+              <canvas id="canvas" width="800" height="600" style="display: none;"></canvas>
+            </div>
+            <br>
+            <a id="recognition" class="btn btn-block btn-primary" data-toggle="button">Start &nbsp;recognition</a>
+          </div>
+          <div>
+
+          </div>
+
+          <div class="panel-footer">
+            <p>Results of face recognition:</p>
+
+            <p id="result"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Description of the database of pictures</h4>
+      </div>
+      <div class="modal-body">
+        <p>Database od pictures has 112 pictures of 14 people, 8 pictures per person. Ever set of pictures is the same,
+          taken the way which represents the empyrical proof of
+          theoretical assumptions made in he 3 section of my thesis.
+        </p><br>
+
+        <p>This is one of those 14 sets:</p>
+        <img src="lena.jpg" class="img-responsive"/>
+        <br>
+
+        <p>The description of the dataset is in the 4th section of my thesis.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+//global variables used in both scripts bellow
+var sliderValue = 0; var context = null;
+</script>
+<script src="js/camera_control.js"></script>
+<script src="js/recognition.js"></script>
+</body>
+</html>

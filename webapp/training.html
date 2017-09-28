@@ -1,0 +1,101 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet"
+        type="text/css">
+  <link href="third_party/range-slider/dist/css/bootstrap-slider.css" rel="stylesheet">
+  <script src="third_party/range-slider/dist/bootstrap-slider.js"></script>
+</head>
+<body style="background-color: grey;">
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span>Face Recognition&nbsp;</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="recognition.html">Just recognition</a>
+        </li>
+        <li class="active">
+          <a href="#">Training&amp;Recognition</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="section" style="background-color: grey;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Camera Input using getUserMedia</h3>
+          </div>
+          <div class="panel-body">
+            <div style="text-align: center;">
+              <video id="video" width="800" height="600" autoplay
+                     style="margin-left: auto; margin-right: auto;"></video>
+              <canvas id="rect" width="800" height="600" style="margin-top: -600px;"></canvas>
+              <input ng-model="price" id="slider"
+                     style="width: 90%;">
+              <canvas id="canvas" width="800" height="600" style="display: none;"></canvas>
+            </div>
+            <br>
+
+            <div class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-1">
+                  <label for="inputEmail3" class="control-label">Label</label>
+                </div>
+                <div class="col-sm-9">
+                  <input id="label" type="text" class="form-control" id="inputEmail3" name="label"
+                         value="1-Emanuel_Guberovic-1">
+                </div>
+				<div class="col-sm-2">
+                  <button id="upload" type="submit" class="btn btn-default">Add to training set</button>
+                </div>
+				<div class="col-sm-12">
+				<div id="upload_result" style="margin-top: 10px;"></div>
+				</div>
+              </div>
+              <div class="form-group">
+                
+              </div>
+            </div>
+            <a id="recognition" class="btn btn-block btn-primary" data-toggle="button">Start training and
+              recognition</a>
+          </div>
+          <div>
+
+          </div>
+          <div class="panel-footer">
+            <p>Results of face recognition:</p>
+            <p id="result"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+<script>
+//global variables used in both scripts bellow
+var sliderValue = 0; var context = null;
+</script>
+<script src="js/camera_control.js"></script>
+<script src="js/training.js"></script>
