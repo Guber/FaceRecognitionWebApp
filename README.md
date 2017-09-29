@@ -20,6 +20,7 @@ In the facerecognition tier this project uses JavaCV as a layer between Java and
 
 Project was developed on JavaCV 1.1(JavaCPP 1.1, OpenCV 3.0.0-1.1). 
 
+
 # Setup
 
 You can use pom.xml file with the described dependency to download the required jar-s. Be sure to include them in the classpath of the project. 
@@ -29,6 +30,8 @@ You can use pom.xml file with the described dependency to download the required 
 Images should be named ID-NAME-NUMBEROFIMAGE.format (for instance 1-Emanuel_Guberovic-1.JPG, 1-Emanuel_Guberovic-2.JPG, 2-Homer_Simpson-1.JPG, ...) and they should be placed inside the javacore/img/ folder.
 
 Once you have them there you can call FaceRecognizerTraining to build xml files of trained FaceRecognizers for FisherFaces, EigenFaces and LBPH algorithms respectevly. They will be placed inside javacore/resources .
+
+## Building artefacts and placing them in webapp
 
 You can than build artefacts as JAR-s with either FaceRecognition as a main class (for testing the trained datasets) or FaceRecognitionTraining for training new datasets and than testing them.
 
